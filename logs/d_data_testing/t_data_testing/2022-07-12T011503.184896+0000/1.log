@@ -1,0 +1,25 @@
+[2022-07-12 01:15:13,556] {taskinstance.py:1044} INFO - Dependencies all met for <TaskInstance: d_data_testing.t_data_testing manual__2022-07-12T01:15:03.184896+00:00 [queued]>
+[2022-07-12 01:15:13,650] {taskinstance.py:1044} INFO - Dependencies all met for <TaskInstance: d_data_testing.t_data_testing manual__2022-07-12T01:15:03.184896+00:00 [queued]>
+[2022-07-12 01:15:13,694] {taskinstance.py:1250} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 01:15:13,697] {taskinstance.py:1251} INFO - Starting attempt 1 of 5
+[2022-07-12 01:15:13,700] {taskinstance.py:1252} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 01:15:13,734] {taskinstance.py:1271} INFO - Executing <Task(BigQueryInsertJobOperator): t_data_testing> on 2022-07-12 01:15:03.184896+00:00
+[2022-07-12 01:15:13,765] {standard_task_runner.py:52} INFO - Started process 19676 to run task
+[2022-07-12 01:15:13,782] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'd_data_testing', 't_data_testing', 'manual__2022-07-12T01:15:03.184896+00:00', '--job-id', '230', '--raw', '--subdir', 'DAGS_FOLDER/dag_testing.py', '--cfg-path', '/tmp/tmpc1_r8e5m', '--error-file', '/tmp/tmppuw655v1']
+[2022-07-12 01:15:13,851] {standard_task_runner.py:80} INFO - Job 230: Subtask t_data_testing
+[2022-07-12 01:15:14,684] {task_command.py:298} INFO - Running <TaskInstance: d_data_testing.t_data_testing manual__2022-07-12T01:15:03.184896+00:00 [running]> on host airflow-worker-5564b8b85-w8ztl
+[2022-07-12 01:15:15,182] {taskinstance.py:1448} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=dennis.kawa@ptgue.com
+AIRFLOW_CTX_DAG_OWNER=Data Engineer
+AIRFLOW_CTX_DAG_ID=d_data_testing
+AIRFLOW_CTX_TASK_ID=t_data_testing
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-12T01:15:03.184896+00:00
+AIRFLOW_CTX_DAG_RUN_ID=manual__2022-07-12T01:15:03.184896+00:00
+[2022-07-12 01:15:15,219] {bigquery.py:2243} INFO - Executing: {'query': {'query': 'CREATE OR REPLACE TABLE `gue-analytics-315803`.`testing_area2`.`data_test_1`\nAS\nSELECT Name, \n    Title,\n    Address\nFROM `gue-analytics-315803`.`testing_area2`.`data_client`;', 'useLegacySql': False}}
+[2022-07-12 01:15:15,220] {credentials_provider.py:324} INFO - Getting connection using `google.auth.default()` since no key file is defined for hook.
+[2022-07-12 01:15:15,245] {bigquery.py:1562} INFO - Inserting job airflow_d_data_testing_t_data_testing_2022_07_12T01_15_03_184896_00_00_f3bee677634df813f921a646fbf62c76
+[2022-07-12 01:15:17,590] {taskinstance.py:1279} INFO - Marking task as SUCCESS. dag_id=d_data_testing, task_id=t_data_testing, execution_date=20220712T011503, start_date=20220712T011513, end_date=20220712T011517
+[2022-07-12 01:15:17,740] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-07-12 01:15:17,828] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check

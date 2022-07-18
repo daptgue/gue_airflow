@@ -1,6 +1,6 @@
 CREATE OR REPLACE TABLE `{{ var.value.GCP_PROJECT }}`.`{{ var.value.DATASET_TESTING2 }}`.`dim_calender`
 AS
-SELECT 
+SELECT
     PERIOD_KEY,
     FULL_DATE,
     YYYYMMDD,

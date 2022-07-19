@@ -36,6 +36,10 @@ jobs:
           workload_identity_provider: 'projects/1085580725380/locations/global/workloadIdentityPools/github-action-pool/providers/github-provider'
           service_account: 'gue-airflow-github-action@gue-analytics-315803.iam.gserviceaccount.com'
 
+      - id: 'cloud-sdk'
+        name: 'Set Up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v0'
+
       - id: 'update-folder-data'
         name: 'Update Folder Data'
         uses: 'google-github-actions/upload-cloud-storage@v0.10.2'
@@ -49,3 +53,7 @@ jobs:
         with:
           path: '/home/runner/work/gue_airflow/gue_airflow/dags'
           destination: 'asia-southeast1-airflow-c8bbb248-bucket'
+      
+      - id: 'delete-file-data'
+        name: 'Delete file Data'
+        run: 'gsutil rm gs://asia-southeast1-airflow-c8bbb248-bucket/data/sql/intermediaries/test2.sql'

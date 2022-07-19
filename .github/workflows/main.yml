@@ -42,3 +42,10 @@ jobs:
         with:
           path: '/home/runner/work/gue_airflow/gue_airflow/data'
           destination: 'asia-southeast1-airflow-c8bbb248-bucket'
+      
+      - id: 'update-folder-dags'
+        name: 'Update Folder DAGs'
+        uses: 'google-github-actions/upload-cloud-storage@v0.10.2'
+        with:
+          path: '/home/runner/work/gue_airflow/gue_airflow/dags'
+          destination: 'asia-southeast1-airflow-c8bbb248-bucket'

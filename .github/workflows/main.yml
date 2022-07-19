@@ -55,5 +55,9 @@ jobs:
           destination: 'asia-southeast1-airflow-c8bbb248-bucket'
       
       - id: 'delete-file-data'
-        name: 'Delete file Data'
+        name: 'Delete File Data'
         run: 'gsutil rm gs://asia-southeast1-airflow-c8bbb248-bucket/data/sql/intermediaries/test2.sql'
+
+      #- id: 'delete-folder-data'
+      #  name: 'Delete Folder Data'
+      #  run: 'gsutil rm -r gs://asia-southeast1-airflow-c8bbb248-bucket/data/sql/intermediaries'
